@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick'
 import { withPrefix } from 'gatsby-link'
+import "./index.less"
 
 const sliderSettings = {
   dots: true,
