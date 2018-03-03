@@ -1,7 +1,7 @@
 import React from 'react';
 import "./index.less"
 import SocialLinks from '../social-links';
-import logo from "./img/logo.png"
+import logo from "./img/logo.jpg"
 
 class Navbar extends React.Component {
   constructor(props) {

@@ -10,6 +10,7 @@ const sliderSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
+  dotsClass: 'slick-dots carousel__dots'
 };
 
 const slides = [
@@ -38,10 +39,10 @@ class HomeSlider extends React.Component {
     {
       slides.map(s => (
         <div>
-          <div className="slide" style={{backgroundImage: `url(${withPrefix(s.img)}`}}>
-            <div className="caption">
-              <p className="title">{s.caption}</p>
-              <p className="description">Lorem ipsum .....</p>
+          <div className="carousel-slide" style={{backgroundImage: `url(${withPrefix(s.img)}`}}>
+            <div className="carousel-slide__text-content">
+              <p className="carousel-slide__title">{s.caption}</p>
+              <p className="carousel-slide__text">Lorem ipsum .....</p>
             </div>
           </div>
         </div>
