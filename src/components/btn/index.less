@@ -11,15 +11,23 @@
   border: none;
 
   &:hover {
-    color: #fff;
-    background-color: #ff9138;
-    border-color: #ff9138;
+    .btn--orange();
   }
 }
 
 .btn--green {
   background-color: #9ac14e;
   color: #fff;
+}
+
+.btn--orange {
+  color: #fff;
+  background-color: #ff9138;
+  border-color: #ff9138;
+
+  &:hover {
+    .btn--green();
+  }
 }
 
 .btn--outline-blue {
