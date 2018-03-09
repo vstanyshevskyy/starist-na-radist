@@ -4,6 +4,7 @@ import { withPrefix } from 'gatsby-link'
 import Slider from '../components/slider'
 import AboutUs from '../components/about-us'
 import PersonsList from '../components/persons-list'
+import Numbers from '../components/numbers'
 
 const volunteers = [{
   name: 'Маріанна',
@@ -41,10 +42,25 @@ const volunteers = [{
   photo: '/img/volunteers/tanya.jpg'
 },];
 
+const numbers = [{
+  number: '300',
+  description: 'дідусів та бабусь'
+}, {
+  number: '10',
+  description: 'волонтерів'
+}, {
+  number: '2000',
+  description: 'годин разом'
+}, {
+  number: '100%',
+  description: 'щастя'
+}];
+
 export default () => <div>
   <Slider />
   <AboutUs />
   <PersonsList list={volunteers} />
+  <Numbers numbers={numbers} />
 
   <div className='dummy'></div>
 </div>
