@@ -40,7 +40,7 @@ const StyledMapWithAnInfoBox = compose(
 
 export default () => <footer className='footer' role='footer'>
   <div className='footer-map' id='map'>
-    <LazyLoad offsetVertical={300}>
+    <LazyLoad threshold={400}>
       <StyledMapWithAnInfoBox />
     </LazyLoad>
   </div>

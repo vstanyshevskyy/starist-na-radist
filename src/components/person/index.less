@@ -1,0 +1,39 @@
+.person {
+  display: flex;
+  border: 1px solid #f2f3f8;
+  max-width: ~"calc(50% - 20px)";
+  margin: 10px;
+  flex-grow: 1/2;
+}
+
+.person__info {
+  width: 60%;
+  padding: 10px 10px 10px 25px;
+}
+
+.person__photo {
+  width: 40%;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+@media screen and (max-width: 768px) {
+  .person {
+    flex-direction: column;
+
+  }
+  .person__info,
+  .person__photo {
+    width: 100%;
+  }
+  .person__photo {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .person {
+    max-width: ~"calc(100% - 20px)";
+  }
+}
