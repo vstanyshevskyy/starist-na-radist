@@ -78,13 +78,30 @@
 }
 
 @media screen and (max-width: 768px) {
+  h3 {
+    text-align: center;
+  }
   .footer {
     flex-direction: column;
   }
   .footer-map {
     min-height: 50vh;
   }
-  .footer .LazyLoad.is-visible {
-    height: 50vh;
+  .footer .LazyLoad.is-visible > div {
+    height: 50vh!important;
+  }
+  .footer-contacts {
+    margin-top: 0;
+  }
+  .footer-contacts-copyrights {
+    flex-direction: column;
+  }
+  .footer-contacts-copyrights__socials {
+    order: 1;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .footer-contacts-copyrights__text {
+    order: 2;
   }
 }
