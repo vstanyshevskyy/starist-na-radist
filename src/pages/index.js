@@ -5,6 +5,7 @@ import Slider from '../components/slider'
 import AboutUs from '../components/about-us'
 import PersonsList from '../components/persons-list'
 import Numbers from '../components/numbers'
+import News from '../components/news'
 
 const volunteers = [{
   name: 'Маріанна',
@@ -58,6 +59,7 @@ const numbers = [{
 
 export default () => <div>
   <Slider />
+  <News />
   <AboutUs />
   <PersonsList list={volunteers} />
   <Numbers numbers={numbers} />

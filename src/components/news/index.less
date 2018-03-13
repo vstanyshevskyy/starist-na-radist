@@ -1,0 +1,35 @@
+.news {
+
+}
+.news__title {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.news__inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.news__column {
+  width: 50%;
+}
+
+.news__column--first {
+  padding-right: 15px;
+}
+
+.news__column--second {
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 568px){
+  .news__inner-container {
+    flex-direction: column;
+  }
+  .news__column {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
