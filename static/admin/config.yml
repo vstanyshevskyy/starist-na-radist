@@ -26,4 +26,4 @@ collections:
       - { name: title, label: Імя }
       - { name: image, label: Фото, widget: image }
       - { name: text, label: Опис, widget: markdown }
-      - { name: facebookLink, label: FB, widget: string }
+      - { name: facebookLink, label: FB, widget: string, optional: true }
