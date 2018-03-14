@@ -5,11 +5,23 @@ backend:
 media_folder: static/assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: news
+    label: Новини
+    folder: news
     create: true
     fields:
       - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
+      - { name: date, label: Дата, widget: date }
+      - { name: title, label: Заголовок }
+      - { name: text, label: Текст, widget: markdown }
+      - { name: image, label: Головне зображення, widget: image }
+  - name: volunteers
+    label: Волонтери
+    folder: volunteers
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: name, label: Імя }
+      - { name: image, label: Фото, widget: image }
+      - { name: text, label: Опис, widget: markdown }
+      - { name: facebookLink, label: FB, widget: string }
