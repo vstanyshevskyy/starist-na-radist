@@ -7,8 +7,10 @@ media_folder: static/assets
 collections:
   - name: news
     label: Новини
+    label_singular: Новина
     folder: news
     create: true
+    delete: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Дата, widget: date }
@@ -21,7 +23,7 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
-      - { name: name, label: Імя }
+      - { name: title, label: Імя }
       - { name: image, label: Фото, widget: image }
       - { name: text, label: Опис, widget: markdown }
       - { name: facebookLink, label: FB, widget: string }
