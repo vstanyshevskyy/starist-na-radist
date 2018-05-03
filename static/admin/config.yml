@@ -5,25 +5,53 @@ backend:
 media_folder: static/assets
 
 collections:
-  - name: news
-    label: Новини
-    label_singular: Новина
-    folder: news
-    create: true
-    delete: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Дата, widget: date }
-      - { name: title, label: Заголовок }
-      - { name: text, label: Текст, widget: markdown }
-      - { name: image, label: Головне зображення, widget: image }
-  - name: volunteers
-    label: Волонтери
-    folder: volunteers
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: title, label: Імя }
-      - { name: image, label: Фото, widget: image }
-      - { name: text, label: Опис, widget: markdown }
-      - { name: facebookLink, label: FB, widget: string, optional: true }
+- name: settings
+  label: Налаштування
+  files:
+    - label: "Футер"
+      name: "footer"
+      file: "content/settings/footer.md"
+      fields:
+        - name: "contentType"
+          widget: "hidden"
+          default: "footer_settings"
+        - label: "Копірайт"
+          name: "copyrightText"
+          widget: "string"
+    - label: "Контакти"
+      name: "contacts"
+      file: "content/settings/contacts.md"
+      fields:
+        - label: "Адреса"
+          name: "address"
+          widget: "string"
+          default: "Львів, вул. Медової Печери" 
+        - label: "Телефон"
+          name: "telephone"
+          widget: "string"
+          default: "+38 050 123-12-12" 
+        - label: "Email"
+          name: "email"
+          widget: "string"
+          default: "test@test.com" 
+        - label: "Центр карти - lat"
+          name: "mapCenterLat"
+          widget: "number"
+          valueType: "float"
+          default: 49.825469
+        - label: "Центр карти - lng"
+          name: "mapCenterLng"
+          widget: "number"
+          valueType: "float"
+          default: 24.068428
+        - label: "Маркер на карті - lat"
+          name: "mapMarkerLat"
+          widget: "number"
+          valueType: "float"
+          default: 49.8231260
+        - label: "Маркер на карті - lng"
+          name: "mapMarkerLng"
+          widget: "number"
+          valueType: "float"
+          default: 24.0887240
+            
