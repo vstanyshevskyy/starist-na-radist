@@ -1,4 +1,5 @@
 ---
+contentType: contacts_settings
 address: "Львів, вул. Медової Печери"
 telephone: "+38 050 123-12-12"
 email: "test@test.com"
