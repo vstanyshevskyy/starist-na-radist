@@ -8,6 +8,23 @@ collections:
 - name: settings
   label: Налаштування
   files:
+    - label: "Проект в цифрах"
+      name: "numbers"
+      file: "content/settings/numbers.md"
+      fields:
+        - name: "contentType"
+          widget: "hidden"
+          default: "numbers_settings"
+        - label: "Заголовок"
+          name: "title"
+          widget: "string"
+          default: "Проект в цифрах"
+        - label: "Блоки"
+          name: "blocks"
+          widget: "list"
+          fields:
+            - {label: Цифра, name: value, widget: string, default: ""}
+            - {label: Текст, name: title, widget: string, default: ""}
     - label: "Футер"
       name: "footer"
       file: "content/settings/footer.md"
@@ -22,6 +39,9 @@ collections:
       name: "contacts"
       file: "content/settings/contacts.md"
       fields:
+        - name: "contentType"
+          widget: "hidden"
+          default: "contacts_settings"
         - label: "Адреса"
           name: "address"
           widget: "string"
