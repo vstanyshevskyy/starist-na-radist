@@ -18,7 +18,6 @@ const StyledMapWithAnInfoBox = compose(
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />,
-    center: { lat: 49.825469, lng: 24.068428 },
   }),
   withStateHandlers(() => ({
     isOpen: false,
@@ -32,16 +31,18 @@ const StyledMapWithAnInfoBox = compose(
 )(props =>
   <GoogleMap
     defaultZoom={14}
-    defaultCenter={props.center}
+    defaultCenter={{ lat: props.center.lat, lng: props.center.lng }}
     defaultOptions={{ styles: mapStyles }}>
-      <Marker position={{ lat: 49.8231260, lng: 24.0887240 }} />
+      <Marker position={{ lat: props.marker.lat, lng: props.marker.lng }} />
   </GoogleMap>
 );
 
-export default () => <footer className='footer' role='footer'>
+export default (props) => <footer className='footer' role='footer'>
   <div className='footer-map' id='map'>
     <LazyLoad threshold={400}>
-      <StyledMapWithAnInfoBox />
+      <StyledMapWithAnInfoBox
+        center={{ lat: props.mapCenterLat, lng: props.mapCenterLng }}
+        marker={{ lat: props.mapMarkerLat, lng: props.mapMarkerLng }} />
     </LazyLoad>
   </div>
   <div className='footer-contacts'>
@@ -61,24 +62,24 @@ export default () => <footer className='footer' role='footer'>
       <h3>Залишаймось на зв'язку</h3>
       <div className='footer-contacts-address__wrapper'>
         <div className='footer-contacts-address__type'>Адреса</div>
-        <div className='footer-contacts-address__value'>Львів, вул. Медової Печери</div>
+        <div className='footer-contacts-address__value'>{props.address}</div>
       </div>
       <div className='footer-contacts-address__wrapper'>
         <div className='footer-contacts-address__type'>Телефон</div>
         <div className='footer-contacts-address__value'>
-          <a className='link__not-a-link' href='tel:+38 050 123-12-12'>+38 050 123-12-12</a>
+          <a className='link__not-a-link' href={`tel:${props.telephone}`}>{props.telephone}</a>
         </div>
       </div>
       <div className='footer-contacts-address__wrapper'>
         <div className='footer-contacts-address__type'>Поштова скринька</div>
         <div className='footer-contacts-address__value'>
-          <a className='link__not-a-link' href='mailto:test@test.com'>test@test.com</a>
+          <a className='link__not-a-link' href={`mailto:${props.email}`}>{props.email}</a>
         </div>
       </div>
     </div>
     <div className='footer-contacts-copyrights'>
       <div className='footer-contacts-copyrights__text'>
-        Старість на радість &copy; 2018. Використання матеріалів дозволяється лише за згоди учасників проекту.
+        {props.copyrightText}
         <br />
         Дизайн - 
         <br />

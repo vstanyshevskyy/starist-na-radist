@@ -4,7 +4,13 @@ import Navbar from "../components/navbar";
 import Helmet from 'react-helmet'
 import './index.less'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({
+  children, location, data:
+  { 
+    FooterData: { edges: [{ node: { frontmatter: footerData } }] },
+    ContactsData: { edges: [{ node: { frontmatter: contactsData } }] }
+  }
+}) => (
   <div>
     <Helmet
       title="#старістьНАрадість"
@@ -17,8 +23,39 @@ const TemplateWrapper = ({ children }) => (
     <div className="content"><Navbar />
       {children()}
     </div>
-    <Footer />
+    <Footer {...footerData} {...contactsData} />
   </div>
 );
 
-export default TemplateWrapper
+export default TemplateWrapper;
+
+export const pageQuery = graphql`
+query FooterData {
+  FooterData: allMarkdownRemark(filter: { frontmatter:  { contentType: { eq: "footer_settings"} }}){
+    edges{
+     node{
+       frontmatter{
+        contentType
+        copyrightText
+       }
+     }
+    }
+  },
+  ContactsData: allMarkdownRemark(filter: { frontmatter:  { contentType: { eq: "contacts_settings"} }}){
+    edges{
+     node{
+       frontmatter{
+        address
+        telephone
+        email
+        mapCenterLat
+        mapCenterLng
+        mapMarkerLat
+        mapMarkerLng
+      }
+     }
+    }
+  }
+}
+`;
+

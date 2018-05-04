@@ -1,5 +1,6 @@
 import "./less/index.less"
 import React from "react"
+import graphql from 'graphql';
 import { withPrefix } from 'gatsby-link'
 import Slider from '../components/slider'
 import AboutUs from '../components/about-us'
@@ -43,26 +44,36 @@ const volunteers = [{
   photo: '/img/volunteers/tanya.jpg'
 },];
 
-const numbers = [{
-  number: '300',
-  description: 'дідусів та бабусь'
-}, {
-  number: '10',
-  description: 'волонтерів'
-}, {
-  number: '2000',
-  description: 'годин разом'
-}, {
-  number: '100%',
-  description: 'щастя'
-}];
-
-export default () => <div>
+export default ({
+  data:
+  { 
+    NumbersData: { edges: [{ node: { frontmatter: numbersData } }] },
+  }
+}) => <div>
   <Slider />
   <News />
   <AboutUs />
   <PersonsList list={volunteers} />
-  <Numbers numbers={numbers} />
+  <Numbers {...numbersData} />
 
   <div className='dummy'></div>
 </div>
+
+export const pageQuery = graphql`
+query HomePageData {
+  NumbersData: allMarkdownRemark(filter: { frontmatter:  { contentType: { eq: "numbers_settings"} }}){
+    edges{
+      node{
+        frontmatter {
+          title
+          blocks {
+            title
+            value
+          }
+        } 
+      }
+    }
+  }
+}
+`;
+
