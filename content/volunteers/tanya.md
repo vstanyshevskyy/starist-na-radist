@@ -1,5 +1,5 @@
 ---
-contentType: numbers_settings
+contentType: volunteers
 path: tanya
 name: Таня
 image: /assets/uploads/tanya.jpg

@@ -1,5 +1,5 @@
 ---
-contentType: numbers_settings
+contentType: volunteers
 path: natalka-avramchuk
 name: Наталка Аврамчук
 image: /assets/uploads/natalka.jpg

@@ -1,5 +1,5 @@
 ---
-contentType: numbers_settings
+contentType: volunteers
 path: ira-marushchak
 name: Іра Марущак
 image: /assets/uploads/ira_m.jpg

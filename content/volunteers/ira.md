@@ -1,5 +1,5 @@
 ---
-contentType: numbers_settings
+contentType: volunteers
 path: ira
 name: Іра
 image: /assets/uploads/ira.jpg
