@@ -105,4 +105,22 @@ collections:
           widget: "number"
           valueType: "float"
           default: 24.0887240
-            
+    - label: "Волонтери"
+      name: "volunteers_settings"
+      file: "content/settings/volunteers.md"
+      fields:
+        - name: "contentType"
+          widget: "hidden"
+          default: "volunteers_settings"
+        - name: "homepageTitle"
+          label: "Заголовок на головній"
+          widget: "string"
+          default: "Команда волонтерів"
+        - name: "homepageCount"
+          label: "Кількість волонтерів на головній"
+          widget: "number"
+          default: 4
+        - name: "seeAllText"
+          label: "Текст ссилки на головній"
+          widget: "string"
+          default: "Переглянути всіх"
