@@ -1,0 +1,38 @@
+.volunteer {
+  max-width: 1200px;
+  display: flex;
+  margin: 20px auto;
+
+  .social-links {
+    margin-left: -10px;
+  }
+}
+.volunteer__details,
+.volunteer__photo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 15px;
+
+  img {
+    width: 100%;
+  }
+}
+.volunteer__photo {
+  text-align: center;
+
+}
+
+@media screen and (max-width: 568px) {
+  .volunteer {
+    flex-direction: column;
+  }
+  .volunteer__photo {
+    max-height: 300px;
+    overflow: hidden;
+    flex-basis: initial;
+    img {
+    }
+  }
+}

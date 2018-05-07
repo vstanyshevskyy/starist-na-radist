@@ -10,5 +10,12 @@ module.exports = {
         path: `${__dirname}/content/settings/`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/volunteers`,
+        name: 'volunteers'
+      }
+    },
   ],
 };

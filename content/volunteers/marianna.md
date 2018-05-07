@@ -3,6 +3,12 @@ contentType: volunteers
 path: marianna
 name: Маріанна
 image: /assets/marianna.jpg
+subtitle: ''
+instagram: ''
+facebook: ''
+metaTitle: ''
+metaKeywords: ''
+metaDescription: ''
 ---
 Привіт усім
 
