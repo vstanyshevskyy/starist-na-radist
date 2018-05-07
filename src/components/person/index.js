@@ -1,5 +1,6 @@
 import React from 'react';
 import "./index.less"
+import Link from 'gatsby-link';
 import { withPrefix } from 'gatsby-link';
 
 class Person extends React.Component {
@@ -9,11 +10,13 @@ class Person extends React.Component {
 
   render() {
     return <div className='person'>
-      <div className='person__photo' style={{backgroundImage: `url(${withPrefix(this.props.info.photo)})`}}>
+      <div className='person__photo' style={{backgroundImage: `url(${withPrefix(this.props.image)})`}}>
       </div>
       <div className='person__info'>
-        <h5 className='person__name'>{this.props.info.name}</h5>
-        <p className='person__description' dangerouslySetInnerHTML={{__html: this.props.info.description}}></p>
+        <h5 className='person__name'>
+          <Link className='person__link' to={`/volunteers/${this.props.path}`}>{this.props.name}</Link>
+        </h5>
+        <p className='person__description' dangerouslySetInnerHTML={{__html: this.props.html}}></p>
       </div>
     </div>
   }

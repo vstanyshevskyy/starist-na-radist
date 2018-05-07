@@ -12,7 +12,7 @@ class PersonsList extends React.Component {
       <h3 className='persons_list__title'>Команда волонтерів</h3>
       <div className='persons-list__list'>
         {
-          this.props.list.map(p => <Person info={p} />)
+          this.props.list.map(p => <Person {...p} />)
         }
       </div>
     </div>
