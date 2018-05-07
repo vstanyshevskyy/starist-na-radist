@@ -3,7 +3,6 @@ import "./index.less"
 
 class Numbers extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
   }
 
