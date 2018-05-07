@@ -20,7 +20,8 @@ const TemplateWrapper = ({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ]}
     />
-    <div className="content"><Navbar />
+    <div className="content">
+      <Navbar {...contactsData}/>
       {children()}
     </div>
     <Footer {...footerData} {...contactsData} />
@@ -30,7 +31,7 @@ const TemplateWrapper = ({
 export default TemplateWrapper;
 
 export const pageQuery = graphql`
-query FooterData {
+query LayoutData {
   FooterData: allMarkdownRemark(filter: { frontmatter:  { contentType: { eq: "footer_settings"} }}){
     edges{
      node{
@@ -45,6 +46,9 @@ query FooterData {
     edges{
      node{
        frontmatter{
+        facebook
+        instagram
+        youtube
         address
         telephone
         email

@@ -52,7 +52,11 @@ class Navbar extends React.Component {
       </a>
       <div className="navbar__contacts">
         <div className="navbar__social-links">
-          <SocialLinks />
+          <SocialLinks 
+            facebookLink={this.props.facebook}
+            instagramLink={this.props.instagram}
+            youtubeLink={this.props.youtube}
+            />
         </div>
         <a className="btn btn--outline-blue" href='/contacts'>Зв'язатись</a>
       </div>
