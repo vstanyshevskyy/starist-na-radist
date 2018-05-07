@@ -2,7 +2,7 @@
 contentType: volunteers
 path: ira-marushchak
 name: Іра Марущак
-image: /assets/uploads/ira_m.jpg
+image: /assets/ira_m.jpg
 ---
 Вітання ✋🏻
 

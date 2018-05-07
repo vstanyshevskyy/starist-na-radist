@@ -2,7 +2,7 @@
 contentType: volunteers
 path: ira
 name: Іра
-image: /assets/uploads/ira.jpg
+image: /assets/ira.jpg
 ---
 Хей-хей, люди!✋🏻😏
 

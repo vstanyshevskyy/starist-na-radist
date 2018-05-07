@@ -2,7 +2,7 @@
 contentType: volunteers
 path: tanya
 name: Таня
-image: /assets/uploads/tanya.jpg
+image: /assets/tanya.jpg
 ---
 Всім привіт👐
 

@@ -2,7 +2,7 @@
 contentType: volunteers
 path: marianna
 name: Маріанна
-image: /assets/uploads/marianna.jpg
+image: /assets/marianna.jpg
 ---
 Привіт усім
 
