@@ -11,8 +11,7 @@
 .volunteer__photo {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  flex-basis: 0;
+  flex-basis: 50%;
   padding: 0 15px;
 
   img {
@@ -24,6 +23,25 @@
 
 }
 
+.volunteer__details {
+  padding-left: 10%;
+}
+
+.volunteer__name {
+  &:after {
+    content: '';
+    height: 5px;
+    width: 20%;
+    display:block;
+    margin-top: 20px;
+    background-color: #9ac14e;
+  }
+}
+
+.volunteer__description {
+  text-align: justify;
+}
+
 @media screen and (max-width: 568px) {
   .volunteer {
     flex-direction: column;
@@ -31,8 +49,11 @@
   .volunteer__photo {
     max-height: 300px;
     overflow: hidden;
-    flex-basis: initial;
+    flex-basis: 100%;
     img {
     }
+  }
+  .volunteer__details {
+    padding-left: 0;
   }
 }

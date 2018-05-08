@@ -19,11 +19,12 @@ export default function Template ({ pathContext, data }) {
       </div>
       <div className='volunteer__details'>
         <h2 className='volunteer__name'>{volunteer.name}</h2>
+        <div className='volunteer__description' dangerouslySetInnerHTML={{__html: volunteer.text}}></div>
+        <p>{volunteer.name} в соціальних мережах:</p>
         <SocialLinks 
           facebookLink={volunteer.fb}
           instagramLink={volunteer.instagram}
           />
-        <div className='volunteer__description' dangerouslySetInnerHTML={{__html: volunteer.text}}></div>
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ export default function HomePage ({
   data:
   { 
     NumbersData: { edges: [{ node: { frontmatter: numbersData } }] },
+    VolunteersSettings: { edges: [{ node: { frontmatter: volunteersSettings }}] },
     VolunteersData: { edges: volunteersData },
   }
 }) {
@@ -21,10 +22,8 @@ export default function HomePage ({
     <Slider />
     <News />
     <AboutUs />
-    <PersonsList list={volunteers} />
+    <PersonsList {...volunteersSettings} list={volunteers} />
     <Numbers {...numbersData} />
-
-    <div className='dummy'></div>
   </div>
   )
 }
@@ -41,6 +40,17 @@ query HomePageData {
             value
           }
         } 
+      }
+    }
+  }
+  VolunteersSettings: allMarkdownRemark(filter: { frontmatter:  { contentType: { eq: "volunteers_settings"} }}){
+    edges{
+      node{
+        frontmatter {
+          title: homepageTitle
+          count: homepageCount
+          seeAllText
+        }
       }
     }
   }
