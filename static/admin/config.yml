@@ -124,3 +124,22 @@ collections:
           label: "Текст ссилки на головній"
           widget: "string"
           default: "Переглянути всіх"
+        - name: "headerImage"
+          label: "Зображення згори сторінки"
+          widget: "image"
+        - name: "headerTitle"
+          label: "Текст згори сторінки"
+          widget: "string"
+          default: "Волонтери"
+        - label: "Meta Title"
+          name: "metaTitle"
+          widget: "string"
+          required: false
+        - label: "Meta Keywords"
+          name: "metaKeywords"
+          widget: "string"
+          required: false
+        - label: "Meta Description"
+          name: "metaDescription"
+          widget: "string"
+          required: false

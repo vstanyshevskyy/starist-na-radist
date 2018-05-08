@@ -9,17 +9,23 @@ class PersonsList extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    const volunteers = this.props.count
+      ? this.props.list.slice(0, this.props.count)
+      : this.props.list;
     return <div className='persons-list'>
-      <h3 className='persons_list__title'>{this.props.title}</h3>
+      { this.props.title
+        ? <h3 className='persons_list__title'>{this.props.title}</h3>
+        : null }
       <div className='persons-list__list'>
         {
-          this.props.list.slice(0, this.props.count).map(p => <Person {...p} />)
+          volunteers.map(p => <Person {...p} />)
         }
       </div>
-      <div className='persons_list__button-container'>
-        <Link className='persons_list__see-all btn btn--orange btn--large' to='/volunteers'>{this.props.seeAllText}</Link>
-      </div>
+      { this.props.seeAllText
+        ? <div className='persons_list__button-container'>
+            <Link className='persons_list__see-all btn btn--orange btn--large' to='/volunteers'>{this.props.seeAllText}</Link>
+          </div>
+        : null }
     </div>
   }
 }
