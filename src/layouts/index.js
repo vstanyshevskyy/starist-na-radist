@@ -8,7 +8,8 @@ const TemplateWrapper = ({
   children, location, data:
   { 
     FooterData: { edges: [{ node: { frontmatter: footerData } }] },
-    ContactsData: { edges: [{ node: { frontmatter: contactsData } }] }
+    ContactsData: { edges: [{ node: { frontmatter: contactsData } }] },
+    NavigationData: { edges: [{ node: { frontmatter: navbarData } }] }
   }
 }) => (
   <div>
@@ -21,10 +22,10 @@ const TemplateWrapper = ({
       ]}
     />
     <div className="content">
-      <Navbar {...contactsData}/>
+      <Navbar {...navbarData}/>
       {children()}
     </div>
-    <Footer {...footerData} {...contactsData} />
+    <Footer {...footerData} socialLinks={navbarData.socialIcons} />
   </div>
 );
 
@@ -46,9 +47,6 @@ query LayoutData {
     edges{
      node{
        frontmatter{
-        facebook
-        instagram
-        youtube
         address
         telephone
         email
@@ -58,6 +56,22 @@ query LayoutData {
         mapMarkerLng
       }
      }
+    }
+  },
+  NavigationData: allMarkdownRemark(filter: { frontmatter:  { contentType: { eq: "navbar_settings"} }}){
+    edges{
+      node{
+        frontmatter{
+          links {
+            text
+            url
+          }
+          socialIcons {
+            type
+            url
+          }
+        }
+      }
     }
   }
 }

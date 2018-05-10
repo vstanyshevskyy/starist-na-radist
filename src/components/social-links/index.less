@@ -1,24 +1,15 @@
-.social-links {
-  display: inline-flex;
-}
+.social-icons {
+  list-style-type: none;
+  padding: 0;
+  li {
+    display: inline-block;
 
-.social-links__link {
-  font-size: 24px;
-  padding: 10px;
-  text-decoration: none;
-  line-height: 29px;
-  height: 44px;
-}
-.social-links__link--facebook {
-  color: #3d5f9a;
-}
-.social-links__link--instagram {
-  color: #000;
-}
-.social-links__link--youtube {
-  color: #FF0000;
-}
-
-.social-links__link--monogrey {
-  color: #eee;
+    a {
+      padding: 10px;
+      color: #666;
+      &:hover {
+        color: #333;
+      }
+    }
+  }
 }

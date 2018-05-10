@@ -1,36 +1,37 @@
 import React from 'react';
 
-class SocialLinks extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+import FaFacebook from 'react-icons/lib/fa/facebook';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaGoogle from 'react-icons/lib/fa/google';
+import FaInstagram from 'react-icons/lib/fa/instagram';
+import './index.less';
 
+export default class SocialIcons extends React.Component {
+  getIconComponent(iconData) {
+    switch (iconData.type) {
+    case 'Facebook':
+      return <FaFacebook />;
+    case 'Twitter':
+      return <FaTwitter />;
+    case 'Instagram':
+      return <FaInstagram />;
+    case 'Google':
+      return <FaGoogle />;
+    default:
+      return null;
+    }
+  }
   render() {
-    const linkModifier = this.props.linksType || 'default';
-    return <div className="social-links">
-      {
-        this.props.facebookLink 
-          ? <a href={this.props.facebookLink} className={`social-links__link social-links__link--facebook social-links__link--${linkModifier}`}>
-            <i className="icon icon-facebook-with-circle"></i>
-          </a>
-        : null
-      }
-      {
-        this.props.instagramLink
-          ? <a href={this.props.instagramLink} className={`social-links__link social-links__link--instagram social-links__link--${linkModifier}`}>
-            <i className="icon icon-instagram-with-circle"></i>
-          </a>
-        : null
-      }
-      {
-        this.props.youtubeLink
-          ? <a href={this.props.youtubeLink} className={`social-links__link social-links__link--youtube social-links__link--${linkModifier}`}>
-            <i className="icon icon-youtube-with-circle"></i>
-          </a>
-        : null
-      }
-    </div>
+    return (
+      <ul className='social-icons'>
+        {(this.props.icons).map(icon => (
+          <li key={icon.type}>
+            <a href={icon.url}>
+              {this.getIconComponent(icon)}
+            </a>
+          </li>))}
+      </ul>
+    );
   }
 }
 
-export default SocialLinks;

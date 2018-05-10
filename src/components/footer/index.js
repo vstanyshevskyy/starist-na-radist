@@ -87,10 +87,7 @@ export default (props) => <footer className='footer' role='footer'>
       </div>
       <div className='footer-contacts-copyrights__socials'>
         <SocialLinks 
-          linksType="monogrey" 
-          facebookLink={props.facebook}
-          instagramLink={props.instagram}
-          youtubeLink={props.youtube} />
+          icons={props.socialLinks} />
       </div>
     </div>
   </div>

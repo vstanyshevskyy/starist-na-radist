@@ -30,9 +30,11 @@ export default function Template ({ pathContext, data: {
           <h2 className='volunteer__name'>{volunteer.name}</h2>
           <div className='volunteer__description' dangerouslySetInnerHTML={{__html: volunteer.text}}></div>
           <p>{volunteer.name} в соціальних мережах:</p>
-          <SocialLinks 
-            facebookLink={volunteer.fb}
-            instagramLink={volunteer.instagram}
+          <SocialLinks
+            icons={[
+              {Facebook: volunteer.fb},
+              {Instagram: volunteer.instagram},
+            ]}
             />
         </div>
       </div>

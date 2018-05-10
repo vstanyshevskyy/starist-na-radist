@@ -1,6 +1,7 @@
 import React from 'react';
 import "./index.less"
 import SocialLinks from '../social-links';
+import Link from 'gatsby-link';
 import logo from "./img/logo.jpg"
 
 class Navbar extends React.Component {
@@ -27,23 +28,16 @@ class Navbar extends React.Component {
         <li className="navbar__menu-item navbar__menu-item--close navbar__menu-item--mobile-only">
           <button className="btn--unstyled" onClick={this.toggleMobileNav}><i className='icon icon-cross' /></button>
         </li>
-        <li className="navbar__menu-item">
-          <a className="navbar__menu-link" href='#'>Про проект</a>
-        </li>
-        <li className="navbar__menu-item">
-          <a className="navbar__menu-link" href='#'>Новини</a>
-        </li>
-        <li className="navbar__menu-item">
-          <a className="navbar__menu-link" href='#'>Пансіонат</a>
-        </li>
-        <li className="navbar__menu-item">
-          <a className="navbar__menu-link" href='#'>Спонсори</a>
-        </li>
+        {(this.props.links || []).map(link => 
+          <li className="navbar__menu-item">
+            <Link className="navbar__menu-link" to={link.url}>{link.text}</Link>
+          </li>
+        )} 
         <li className="navbar__menu-item navbar__menu-item--mobile-only">
           <a className="navbar__menu-link" href='#'>Контакти</a>
         </li>
         <li className="navbar__menu-item navbar__menu-item--social-links navbar__menu-item--mobile-only">
-          <SocialLinks />
+          <SocialLinks icons={this.props.socialIcons} />
         </li>
       </ul>
       <a href='/' className='navbar__logo-container'>
@@ -52,11 +46,7 @@ class Navbar extends React.Component {
       </a>
       <div className="navbar__contacts">
         <div className="navbar__social-links">
-          <SocialLinks 
-            facebookLink={this.props.facebook}
-            instagramLink={this.props.instagram}
-            youtubeLink={this.props.youtube}
-            />
+        <SocialLinks icons={this.props.socialIcons} />
         </div>
         <a className="btn btn--outline-blue" href='/contacts'>Зв'язатись</a>
       </div>
