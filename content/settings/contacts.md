@@ -1,8 +1,5 @@
 ---
 contentType: contacts_settings
-facebook: 'https://www.facebook.com/pg/staristNAradist'
-instagram: 'https://www.instagram.com/pg/staristNAradist'
-youtube: 'https://www.youtube.com/channel/UCydvBI5YmJPtRv5yzsQmIdA'
 address: 'Львів, вул. Медової Печери'
 telephone: +38 050 123-12-12
 email: test@test.com
